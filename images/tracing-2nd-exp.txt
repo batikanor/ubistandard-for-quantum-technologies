@@ -1,0 +1,40 @@
+\documentclass[convert={density=600,outext=.png}]{standalone}
+
+\usepackage{tikz}
+
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\prhalf}{
+    \small \textit{ pr=$ 1 \over 2 $ }
+}
+\newcommand{\prhalfhalf}{
+    \small \textit{ pr=$ {1 \over 2} \cdot {1 \over 2} = \color{blue}{1 \over 4} $ }
+}
+
+\begin{document}
+\begin{tikzpicture}
+
+\draw[->] (6,10) node[above] {$\ket{0}$} 
+    --(6,9) 
+    node[midway,right] {\textbf{H}}
+    node[below] {$ \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} $}
+    ;
+    
+\draw (6,8.3) -- (6,8) node[below]{\textbf{M}};
+\draw(5.95,7.5) -- (5.20,6.5) node[midway,left]{ \prhalf } 
+    node[below] {$ \ket{0} $};
+\draw(6.05,7.5) -- (6.8,6.5) node[midway,right]{ \color{blue}{\prhalf} }
+    node[below] {$ \ket{1} $};
+    
+\draw[->] (5.2,5.9) --(5.2,4.9) 
+    node[midway,right] {\textbf{H}}
+    node[below] {$ \frac{1}{\sqrt{2}} \ket{0} + \frac{1}{\sqrt{2}} \ket{1} $}
+    ;
+    
+\draw (5.20,4.2) -- (5.20,3.9) node[below]{\textbf{M}};
+\draw(5.15,3.4) -- (4.40,2.4) node[midway,left]{ \prhalfhalf } 
+    node[below] {$ \ket{0} $};
+\draw(5.25,3.4) -- (6,2.4) node[midway,right]{ \prhalfhalf } 
+    node[below] {$ \ket{1} $};    
+
+\end{tikzpicture}
+\end{document}
